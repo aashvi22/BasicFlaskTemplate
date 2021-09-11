@@ -6,8 +6,10 @@ class Game(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(100))
     game_type = db.Column(db.String(100)) # FIXME: this would be better as an enum, but I have no idea how to implement
-    num_people = db.Column(db.Integer)
-    date = db.Column(db.DateTime(timezone = True), default=func.now())
+    initial_number_of_people = db.Column(db.Integer)
+    total_number_people = db.Column(db.Integer)
+    creation_date = db.Column(db.DateTime(timezone = True), default=func.now())
+    event_datetime = db.Column(db.DateTime(timezone = True))
     lat = db.Column(db.Float())
     lng = db.Column(db.Float())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # one to many relationship between user and his/her games
