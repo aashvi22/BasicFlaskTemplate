@@ -16,10 +16,11 @@ def home():
         sportSelect = request.form.get('sportSelect')
         currNumPeople = request.form.get('currNumPeople')
         totalNumPeople = request.form.get('totalNumPeople')
-        dateTime = request.form.get('dateTime')
+        #dateTime = request.form.get('dateTime')
         lat = request.form.get('lat')
         lng = request.form.get('lng')
-        new_game = Game(user_id = current_user.id, name = name, game_type = sportSelect, total_number_people = totalNumPeople, initial_number_people = currNumPeople, event_datetime = dateTime, latitude = lat, longitude = lng)
+        new_game = Game(user_id = current_user.id, name = name, game_type = sportSelect, total_number_people = totalNumPeople, initial_number_people = currNumPeople, latitude = lat, longitude = lng)
+        #event_datetime = dateTime, ^
         db.session.add(new_game)
         db.session.commit()
         flash('Game created', category='success')
