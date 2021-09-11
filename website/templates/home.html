@@ -1,32 +1,42 @@
 {% extends "base.html" %}
-{% block title %}Changed {% endblock %}
+{% block title %}Pickup Finder{% endblock %}
 {% block content %}
-<h1 align="center">Notes</h1>
-<ul class = "list-group list-group-flush" id = "notes">
-    {%for note in user.notes%}
-    <li class = "list-group-item">
-        {{note.data}}
-        <button type = "button" class = "close" onClick="deleteNote({{note.id}})">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </li>
-    {%endfor%}
-</ul>
-<form method = 'POST'>
-    <textarea name = "note" id = "note" class = "form-control"></textarea>
-    <br/>
-    <div align = "center">
-        <button type="submit" class="btn btn-primary">Submit</button>
+<div class = "w-100 bg-light rounded my-2" style = "height: 50em;"></div>
+<form class="row g-3" method="POST">
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="inputAddress" placeholder="Type for Google maps autocomplete">
+          <span class="input-group-text"><i class="bi bi-search"></i> </span>
+        </div>
     </div>
-</form>
-{% endblock %}
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>Home</title>-->
-<!--</head>-->
-<!--<body>-->
+    <div class="col-12">
+      <label for="gameName" class="form-label">Name</label>
+      <input type="text" class="form-control" id="gameName" placeholder="Name your game so others can find it">
+    </div>
+    <div class="col-md-6">
+      <label for="sportSelect" class="form-label">Sport Type</label>
+      <select class="form-select" name="sportSelect" aria-label="Default select example">
+        <option selected>Pick your sport</option>
+        <option value="basketball">Basketball</option>
+        <option value="soccer">Soccer</option>
+      </select>
+    </div>
+    <div class = "col-md-6">
+      <label for="numPeople" class="form-label">Number of People</label>
+      <input type="text" class="form-control" id="numPeople" placeholder="How many people you have">
+    </div>
+    <div class="col-12">
+      <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="makePublic">
+          <label class="form-check-label" for="flexSwitchCheckChecked">Make public</label>
+          </div>
+      </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Create a game</button>
+    </div>
 
-<!--</body>-->
-<!--</html>-->
+</form>
+
+</div>
+{% endblock %}
