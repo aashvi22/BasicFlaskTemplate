@@ -87,7 +87,7 @@
 <form class="row g-3" method="POST">
     <div class="col-12">
       <label for="gameName" class="form-label">Name</label>
-      <input type="text" class="form-control" id="gameName" placeholder="Name your game so others can find it" required>
+      <input type="text" class="form-control" id="gameName" name="gameName" placeholder="Name your game so others can find it" required>
     </div>
     <div class="col-md-6">
       <label for="sportSelect" class="form-label">Sport Type</label>
@@ -99,36 +99,32 @@
     </div>
     <div class = "col-md-6">
       <label for="currNumPeople" class="form-label">Current Number of People</label>
-      <input type="text" class="form-control" id="numPeople" placeholder="How many people you have?" required>
-    </div>
-    <div class = "col-md-6">
-      <label for="currNumPeople" class="form-label">Total Number of People</label>
-      <input type="text" class="form-control" id="numPeople" placeholder="How many people total do you want?" required>
-    </div>
-    <div class = "col-md-6">
-      <label for="currNumPeople" class="form-label">Current Number of People</label>
-      <input type="text" class="form-control" id="currNumPeople" placeholder="How many people you have?" required>
+      <input type="text" class="form-control" id="currNumPeople" name="currNumPeople" placeholder="How many people you have?" required>
     </div>
     <div class = "col-md-6">
       <label for="totalNumPeople" class="form-label">Total Number of People</label>
-      <input type="text" class="form-control" id="totalNumPeople" placeholder="How many people total do you want?" required>
+      <input type="text" class="form-control" id="totalNumPeople" name="totalNumPeople" placeholder="How many people total do you want?" required>
     </div>
     <div class="col-12">
       <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="makePublic">
+          <input class="form-check-input" type="checkbox" id="makePublic" name="makePublic">
           <label class="form-check-label" for="flexSwitchCheckChecked">Make public</label>
           </div>
     </div>
     <div class="col-md-6">
       <label for="lat" class="form-label">Latitude</label>
-      <input type="text" class="form-control" id="lat" placeholder="Input latitude or use your current location" required>
+      <input type="text" class="form-control" id="lat" name="lat" placeholder="Input latitude or use your current location" required>
     </div>
     <div class="col-md-6">
       <label for="lng" class="form-label">Longitude</label>
-      <input type="text" class="form-control" id="lng" placeholder="Input longitude or use your current location" required>
+      <input type="text" class="form-control" id="lng" name="lng" placeholder="Input longitude or use your current location" required>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Date/Time</label>
+        <input type="datetime-local" class="form-control" id="dateTime" name="dateTime">
     </div>
     <div class="col-12">
-      <button type="button" class = "btn btn-primary" id = "getCurrentLocationBtn">Get current location <i class="bi bi-pin-map-fill"></i></button>
+      <button type="button" class = "btn btn-primary" id="getCurrentLocationBtn" name="getCurrentLocationBtn">Get current location <i class="bi bi-pin-map-fill"></i></button>
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Create a game</button>
